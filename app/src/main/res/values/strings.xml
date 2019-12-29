@@ -1,7 +1,19 @@
 <resources>
-    <string name="app_name">Food</string>
-    <string name="name">Alicia Scott</string>
-    <string name="date">Today 03:14PM </string>
-    <string name="empty_list">oops, List is empty.</string>
-    <string name="loading">please wait</string>
+    <string name="app_name">O6U Attendance</string>
+
+
+    <string name="welcome_back_text">Welcome back</string>
+    <string name="user_name_field_hint">Username</string>
+    <string name="password_field_hint">Password</string>
+    <string name="forgot_password_text">Request New Password</string>
+    <string name="login_button_text">Log In</string>
+    <string name="logout_button_text">Log Off</string>
+    <string name="powered_by_text" translatable="false">Powered by STS</string>
+    <string name="forgot_password_heading">Forgot Password</string>
+    <string name="forgot_password_instructions_text">Please enter your email below to receive your password reset instructions</string>
+    <string name="email_text_with_dash">E-mail</string>
+    <string name="send_request_button_text">Send Request</string>
+    <string name="reset_password_text">Reset Password</string>
+    <string name="empty_list">there is No Subjects Assigned to You Until Now Sir!</string>
+
 </resources>

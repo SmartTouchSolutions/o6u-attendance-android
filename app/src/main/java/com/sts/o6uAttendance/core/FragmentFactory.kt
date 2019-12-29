@@ -1,6 +1,6 @@
 package com.sts.o6uAttendance.core
 
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.FragmentManager
 import com.sts.o6uAttendance.ui.home.HomeFragment
 
 object FragmentFactory{

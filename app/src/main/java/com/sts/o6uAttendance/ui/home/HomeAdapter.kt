@@ -1,16 +1,16 @@
 package com.sts.o6uAttendance.ui.home
 
-import android.databinding.ViewDataBinding
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.simple.sample.data.model.Food
-import com.simple.sample.databinding.FoodItemRowBinding
-import com.simple.sample.ui.util.DataBindingViewHolder
-import com.simple.sample.BR.item
+import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.RecyclerView
+import com.sts.o6uAttendance.data.model.Subject
+import com.sts.o6uAttendance.databinding.SubjectItemRowBinding
+
+import com.sts.o6uAttendance.ui.util.DataBindingViewHolder
 
 class HomeAdapter(
-    private var items: MutableList<Food> = arrayListOf<Food>()
+    private var items: MutableList<Subject> = arrayListOf()
 ) : RecyclerView.Adapter<HomeAdapter.SimpleHolder>() {
     override fun getItemCount(): Int = items.size
 
@@ -19,18 +19,19 @@ class HomeAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleHolder {
-        val binding  = FoodItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding  =
+            SubjectItemRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return SimpleHolder(binding)
     }
 
     inner class SimpleHolder(dataBinding: ViewDataBinding)
-        : DataBindingViewHolder<Food>(dataBinding)  {
-        override fun onBind(t: Food): Unit = with(t) {
-            dataBinding.setVariable(item,t)
+        : DataBindingViewHolder<Subject>(dataBinding)  {
+        override fun onBind(t: Subject): Unit = with(t) {
+            dataBinding.setVariable(id,t)
         }
     }
 
-    fun add(list: MutableList<Food>) {
+    fun add(list: MutableList<Subject>) {
         items.addAll(list)
         notifyDataSetChanged()
     }

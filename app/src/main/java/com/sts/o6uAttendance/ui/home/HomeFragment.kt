@@ -1,22 +1,21 @@
 package com.sts.o6uAttendance.ui.home
 
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil.inflate
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_home.*
-import com.sts.o6uAttendance.data.model.FoodDto
-import com.sts.o6uAttendance.databinding.FragmentHomeBinding
+import androidx.databinding.DataBindingUtil.inflate
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sts.o6uAttendance.R
+import com.sts.o6uAttendance.data.model.SubjectDto
+import com.sts.o6uAttendance.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(){
+class HomeFragment : androidx.fragment.app.Fragment(){
     private val TAG: String = HomeFragment::class.java.simpleName
     companion object {
         val FRAGMENT_NAME: String = HomeFragment::class.java.name
@@ -27,7 +26,7 @@ class HomeFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding : FragmentHomeBinding = inflate(inflater, R.layout.fragment_home, container, false)
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,16 +49,21 @@ class HomeFragment : Fragment(){
         }
     }
 
-    private fun initView(it: FoodDto?) {
-        rv_main_home.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+    private fun initView(it: SubjectDto?) {
+        rv_main_home.layoutManager =
+            LinearLayoutManager(
+                context,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
         rv_main_home.adapter = adapter
         progressBar_home.visibility= View.GONE
-        if (it!!.results.isNotEmpty()) {
+        if (it!!.subjects.isNotEmpty()) {
             adapter.clear()
-            adapter.add(it.results)
+            adapter.add(it.subjects)
 
         }else{
-            Toast.makeText(context, context?.getString(R.string.empty_list), android.widget.Toast.LENGTH_LONG).show()
+            Toast.makeText(context, context?.getString(R.string.empty_list), Toast.LENGTH_LONG).show()
         }
     }
 }

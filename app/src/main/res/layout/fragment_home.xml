@@ -4,16 +4,16 @@
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:background="@color/bg"
+        android:background="@color/colorPrimary"
         android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:id="@+id/rv_main_home"
             android:layout_margin="8dp"
-            android:background="@color/bg"
+            android:background="@color/colorPrimary"
             android:layout_height="wrap_content">
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
         <LinearLayout
             android:id="@+id/progressBar_home"
             android:layout_width="match_parent"
@@ -35,7 +35,6 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:text="@string/loading"
                 android:textSize="13sp"
                 android:textStyle="bold" />
         </LinearLayout>
