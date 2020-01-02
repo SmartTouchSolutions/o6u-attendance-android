@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="loginViewModel"
             type="com.sts.o6uAttendance.ui.login.LoginViewModel" />
@@ -28,7 +29,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.110000014"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="Logo" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/login_form"
@@ -44,7 +46,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.0"
-            tools:visibility="visible">
+            android:visibility="@{loginViewModel.loading ? View.GONE : View.VISIBLE}">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/username_text_layout"
@@ -112,6 +114,7 @@
                 android:text="@string/forgot_password_text"
                 android:textColor="@color/white"
                 android:textSize="14sp"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toTopOf="@+id/login_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -156,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:visibility="invisible"
+            android:visibility="@{loginViewModel.loading ? View.VISIBLE : View.GONE }"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

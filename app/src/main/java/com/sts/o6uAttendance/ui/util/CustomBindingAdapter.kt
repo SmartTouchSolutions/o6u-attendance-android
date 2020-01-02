@@ -1,15 +1,18 @@
 package com.sts.o6uAttendance.ui.util
 
 import androidx.databinding.BindingAdapter
-import android.widget.ImageView
-import com.squareup.picasso.Picasso
+import androidx.recyclerview.widget.RecyclerView
 
-object CustomBindingAdapter{
+//    @JvmStatic
+//    @BindingAdapter("bind:image_url")
+//    fun loadImage(imageView: ImageView, url: String) {
+//        Picasso.with(imageView.context).load(url).into(imageView)
+//    }
 
-    @JvmStatic
-    @BindingAdapter("bind:image_url")
-    fun loadImage(imageView: ImageView, url: String) {
-        Picasso.with(imageView.context).load(url).into(imageView)
+@BindingAdapter("data")
+fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: T) {
+    if (recyclerView.adapter is BindableAdapter<*>) {
+        (recyclerView.adapter as BindableAdapter<T>).setData(data)
     }
-
 }
+

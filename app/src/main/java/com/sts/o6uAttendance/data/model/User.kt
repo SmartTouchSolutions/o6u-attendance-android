@@ -9,6 +9,7 @@ data class User(
     @PrimaryKey
     @SerializedName("id") var id: Int,
     @SerializedName("username") var username: String,
+    @SerializedName("name") var name: String,
     @SerializedName("email") var email: String,
     @SerializedName("type") var type: String,
     @SerializedName("Authorization") var token: String
