@@ -26,6 +26,7 @@ import com.sts.o6uAttendance.data.model.AttendanceDto
 import com.sts.o6uAttendance.data.model.ResponseDto
 import com.sts.o6uAttendance.data.network.ApiService
 import com.sts.o6uAttendance.demo.adapters.AttendanceDemoAdapter
+import com.sts.o6uAttendance.ui.attendance.scanner.SimpleScannerDemoActivity
 import kotlinx.android.synthetic.main.activity_attendance_demo.*
 import retrofit2.Call
 import retrofit2.Callback

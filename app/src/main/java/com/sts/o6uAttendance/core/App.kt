@@ -5,12 +5,12 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.view.View
-import androidx.multidex.MultiDex
-import com.sts.o6uAttendance.ui.util.SavePrefs
+//import androidx.multidex.MultiDex
 import com.sts.o6uAttendance.data.db.AccountData
 import com.sts.o6uAttendance.data.model.User
 import com.sts.o6uAttendance.data.network.ApiService
 import com.sts.o6uAttendance.ui.splash.SplashActivity
+import com.sts.o6uAttendance.ui.util.SavePrefs
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -39,7 +39,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        MultiDex.install(this)
+//        MultiDex.install(this)
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val httpClient = OkHttpClient.Builder()
@@ -60,7 +60,7 @@ class App : Application() {
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        MultiDex.install(this)
+//        MultiDex.install(this)
     }
 
 }

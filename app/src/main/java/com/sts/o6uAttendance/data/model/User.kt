@@ -1,12 +1,12 @@
 package com.sts.o6uAttendance.data.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+//import androidx.room.Entity
+//import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "User")
+//@Entity(tableName = "User")
 data class User(
-    @PrimaryKey
+//    @PrimaryKey
     @SerializedName("id") var id: Int,
     @SerializedName("username") var username: String,
     @SerializedName("name") var name: String,

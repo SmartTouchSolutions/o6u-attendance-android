@@ -21,7 +21,7 @@
         android:fullBackupContent="@xml/backup_descriptor"
         tools:targetApi="m">
         <activity android:name=".demo.activities.AttendanceDemoActivity" />
-        <activity android:name=".demo.activities.SimpleScannerDemoActivity"/>
+        <activity android:name=".ui.attendance.scanner.SimpleScannerDemoActivity"/>
         <activity android:name=".demo.activities.LecturesDemoActivity" />
         <activity android:name=".demo.activities.SubjectsDemoActivity" />
         <activity android:name=".ui.splash.SplashActivity">

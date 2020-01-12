@@ -1,14 +1,11 @@
 package com.sts.o6uAttendance.data.db
 
-import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.sts.o6uAttendance.core.App
-import com.sts.o6uAttendance.data.model.User
+//import androidx.room.Database
+//import androidx.room.Room
+//import androidx.room.RoomDatabase
 
-@Database(entities = [User::class/*, Subject::class*/], version = AppDatabase.VERSION)
-abstract class AppDatabase : RoomDatabase() {
+//@Database(entities = [User::class/*, Subject::class*/], version = AppDatabase.VERSION)
+abstract class AppDatabase /*: RoomDatabase() {
 
     abstract fun userDao(): UserDao
 //    abstract fun subjectDao(): SubjectDao
@@ -54,4 +51,4 @@ abstract class AppDatabase : RoomDatabase() {
 
     }
 
-}
+}*/
